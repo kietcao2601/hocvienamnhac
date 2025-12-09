@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUSIC ACADEMY</title>
+
+<style>
+/* Reset CSS – xóa margin/padding mặc định */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#000;
+}
+
+/*==================== HEADER ====================*/
+header{
+  background:#5a1e8c;            /* Màu tím đậm */
+  padding:15px 0;
+  height:90px;
+  color:white;
+  position:fixed;                 /* Cố định header */
+  width:100%;
+  top:0;
+  z-index:999;                    /* Luôn nằm trên */
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
+}
+
+/* Logo ảnh */
+.logo-img1{
+  width:58px;
+  height:58px;
+  object-fit:cover;
+}
+
+/* Menu liên kết */
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:700;
+}
+
+/* Hiệu ứng hover menu */
+nav a:hover{
+  color:#ffddf7;
+}
+
+/* Nút Apply Now */
+.apply-btn{
+  padding:10px 15px;
+  font-size:18px;
+  background:#ff3f6f;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/*==================== HERO SECTION ====================*/
+.hero{
+  height:700px;
+  margin-top:90px;               /* Đẩy xuống dưới header */
+  background-image:url('./Image/c2.jpg'); /* Ảnh nền âm nhạc */
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  position:relative;
+}
+
+/* Tiêu đề hero */
+.hero-title{
+  font-size:42px;
+  color:#ffe6ff;
+  font-weight:700;
+  text-align:center;
+  padding-top:60px;
+  transform:translateY(70px);
+}
+
+/* Mô tả hero */
+.hero-desc{
+  font-size:24px;
+  color:white;
+  text-align:center;
+  font-weight:600;
+  transform:translateY(110px);
+  text-shadow:-3px -3px 8px rgba(0,0,0,0.8);
+}
+
+/* Nút Start Learning */
+.start-btn-container{
+  display:flex;
+  justify-content:center;
+}
+
+.start-btn{
+  padding:14px 20px;
+  background:#9e27ff;
+  color:white;
+  font-size:20px;
+  font-weight:700;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  transform:translateY(170px);
+}
+
+/* 3 box mô tả hero */
+.hero-boxes{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:40px;
+}
+
+.box{
+  width:430px;
+  background:rgba(60,0,80,0.75);
+  border-radius:8px;
+  color:white;
+  transform:translateY(190px);
+  padding:20px;
+}
+
+.box-title{
+  font-size:26px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.box-content{
+  font-size:18px;
+  line-height:1.4;
+}
+
+/*==================== SECTION KHÓA HỌC ====================*/
+.orange-section{
+  background:linear-gradient(to bottom,#f2d6ff,#fff0ff);
+  padding:50px 0;
+  margin-top:30px;
+}
+
+.courses{
+  width:90%;
+  margin:auto;
+}
+
+.courses-our{
+  font-size:32px;
+  font-weight:900;
+  color:#5a1e8c;
+}
+
+.courses-wide{
+  margin-top:10px;
+  font-size:20px;
+  font-weight:600;
+  color:#5a1e8c;
+}
+
+/* Grid 3 cột */
+.course-grid{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.course-card{
+  background:white;
+  border-radius:8px;
+  padding-bottom:20px;
+  text-align:left;
+  color:black;
+}
+
+/* Hình khóa học */
+.course-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+/* Dòng chữ nhỏ trên chủ đề */
+.course_red{
+  color:#ff3f6f;
+  font-size:18px;
+  margin:12px;
+  font-weight:700;
+}
+
+/* Tên khóa học */
+.course_1{
+  color:#5a1e8c;
+  font-size:25px;
+  font-weight:700;
+  margin:12px;
+}
+
+/* Mô tả khóa học */
+.course_2{
+  color:#5a1e8c;
+  font-size:18px;
+  margin-left:20px;
+}
+
+/* Nút Apply Now trong khóa học */
+.detail-btn{
+  padding:10px 15px;
+  background:#ff3f6f;
+  border-radius:4px;
+  color:white;
+  margin-left:20px;
+  display:inline-block;
+  margin-top:10px;
+}
+
+/*==================== GIẢNG VIÊN ====================*/
+.lecturers{
+  width:90%;
+  margin:auto;
+  margin-top:50px;
+}
+
+.lecturers-our{
+  font-size:28px;
+  font-weight:900;
+  color:#5a1e8c;
+}
+
+.lecturer-grid{
+  margin-top:25px;
+  display:flex;
+  gap:20px;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.lect-card{
+  width:22%;
+  background:white;
+  padding-bottom:15px;
+  border-radius:8px;
+}
+
+/* Ảnh giảng viên */
+.lect-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.lect-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center top; /* Đẩy ảnh lên trên để thấy mặt rõ */
+  border-radius: 8px 8px 0 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<!--==================== HEADER ====================-->
+<header>
+<div style="display:flex; justify-content:space-between; align-items:center; padding:0 30px;">
+  <div class="logo">
+    <img src="./Image/c3.jpg" class="logo-img1">
+    STAR MUSIC ACADEMY
+  </div>
+
+  <!-- Menu -->
+  <nav style="display:flex; gap:40px; align-items:center;">
+    <a href="home.html">HOME</a>
+    <a href="#">PROGRAMS</a>
+    <a href="#">COURSES</a>
+    <a href="eve.html">GALLERY</a>
+    <a href="cona.html">CONTACT</a>
+    <button class="apply-btn">APPLY NOW</button>
+  </nav>
+</div>
+</header>
+
+
+<!--==================== HERO SECTION ====================-->
+<section class="hero">
+
+  <p class="hero-title">STAR MUSIC ACADEMY</p>
+
+  <p class="hero-desc">
+   Discover your musical talent and become a true artist.
+  </p>
+
+  <div class="start-btn-container">
+    <button class="start-btn">START LEARNING</button>
+  </div>
+
+  <div class="hero-boxes">
+
+    <div class="box">
+      <p class="box-title">Professional Studios</p>
+      <p class="box-content">
+        Practice in modern music studios with full instrument setups.
+      </p>
+    </div>
+
+    <div class="box">
+      <p class="box-title">Music Production Program</p>
+      <p class="box-content">
+        Learn mixing, mastering, composing and digital sound design.
+      </p>
+    </div>
+
+    <div class="box">
+      <p class="box-title">Expert Mentors</p>
+      <p class="box-content">
+        Study with top musicians, composers, and producers worldwide.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!--==================== KHÓA HỌC ====================-->
+<div class="orange-section">
+
+<section class="courses">
+
+  <p class="courses-our">Our Music Courses</p>
+  <p class="courses-wide">Programs designed for future musicians and music producers.</p>
+
+  <div class="course-grid">
+
+    <!-- Khóa học Guitar -->
+    <div class="course-card">
+      <img src="./Image/c1.jpg">
+      <p class="course_red">Instrument</p>
+      <p class="course_1">Acoustic Guitar Training</p>
+      <p class="course_2">Learn chords, rhythm, fingerstyle, and stage performance skills.</p>
+      <div class="detail-btn">APPLY NOW</div>
+    </div>
+
+    <!-- Piano -->
+    <div class="course-card">
+      <img src="./Image/c9.jpg">
+      <p class="course_red">Instrument</p>
+      <p class="course_1">Piano Performance</p>
+      <p class="course_2">Master classical, pop, and modern piano techniques.</p>
+      <div class="detail-btn">APPLY NOW</div>
+    </div>
+
+    <!-- Production -->
+    <div class="course-card">
+      <img src="./Image/c5.jpg">
+      <p class="course_red">Production</p>
+      <p class="course_1">Music Production & Mixing</p>
+      <p class="course_2">Learn DAWs, beatmaking, mixing and mastering.</p>
+      <div class="detail-btn">APPLY NOW</div>
+    </div>
+
+    <!-- Vocal -->
+    <div class="course-card">
+      <img src="./Image/c6.jpg">
+      <p class="course_red">Vocal</p>
+      <p class="course_1">Professional Vocal Training</p>
+      <p class="course_2">Build your voice, breathing technique and stage confidence.</p>
+      <div class="detail-btn">APPLY NOW</div>
+    </div>
+
+    <!-- Violin -->
+    <div class="course-card">
+      <img src="./Image/c7.jpg">
+      <p class="course_red">Instrument</p>
+      <p class="course_1">Violin Masterclass</p>
+      <p class="course_2">Advanced bowing, tone shaping and musical interpretation.</p>
+      <div class="detail-btn">APPLY NOW</div>
+    </div>
+
+    <!-- DJ -->
+    <div class="course-card">
+      <img src="./Image/c8.jpg">
+      <p class="course_red">DJ</p>
+      <p class="course_1">DJ & Electronic Music</p>
+      <p class="course_2">Learn turntables, controllers, live mixing and EDM creation.</p>
+      <div class="detail-btn">APPLY NOW</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!--==================== GIẢNG VIÊN ====================-->
+<section class="lecturers">
+
+  <p class="lecturers-our">Our Expert Instructors</p>
+
+  <div class="lecturer-grid">
+
+    <div class="lect-card">
+      <img src="./Image/t1.jpg" alt="Misumi Saori">
+      <h3>Misumi Saori</h3>
+      <p>Piano Instructor</p>
+    </div>
+
+    <div class="lect-card">
+      <img src="./Image/t2.jpg" alt="Choi Jisoun">
+      <h3>Jisoun</h3>
+      <p>Vocal Coach</p>
+    </div>
+
+    <div class="lect-card">
+      <img src="./Image/t3.jpg" alt="Jenni">
+      <h3>Jenni</h3>
+      <p>Guitar Specialist</p>
+    </div>
+
+    <div class="lect-card">
+      <img src="./Image/t4.jpg" alt="Choi Summi">
+      <h3>Summi</h3>
+      <p>Music Producer</p>
+    </div>
+  </div>
+</section>
+
